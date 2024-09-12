@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".Game">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/scissor_button"
+        app:layout_constraintTop_toBottomOf="@+id/settings_game_button"
+        tools:layout_editor_absoluteX="16dp" />
+
     <Button
         android:id="@+id/rock_button"
         style="@style/RoundedButtonStyle"
@@ -43,9 +52,101 @@
         android:layout_marginBottom="25dp"
         android:contentDescription="@string/app_name"
         android:text=" "
-        app:iconPadding="-5dp"
         app:icon="@drawable/paper"
+        app:iconPadding="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/home_button"
+        style="@style/ControlButtons"
+        android:layout_width="48dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/app_name"
+        android:padding="0dp"
+        android:text=" "
+        app:icon="@drawable/home"
+        app:layout_constraintEnd_toStartOf="@+id/settings_game_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/settings_game_button"
+        style="@style/ControlButtons"
+        android:layout_width="48dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/app_name"
+        android:padding="0dp"
+        android:text=" "
+        app:icon="@drawable/settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/reset_button"
+        style="@style/ControlButtons"
+        android:layout_width="48dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/app_name"
+        android:padding="0dp"
+        android:text=" "
+        app:icon="@drawable/reset"
+        app:layout_constraintStart_toEndOf="@+id/settings_game_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/bot_score_text"
+        style="@style/ScoreStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="0"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/player_score_text"
+        style="@style/ScoreStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="0"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/bot_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="bot"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bot_score_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/player_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="player"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_score_text" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

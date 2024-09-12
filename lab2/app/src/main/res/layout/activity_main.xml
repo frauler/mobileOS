@@ -9,53 +9,41 @@
 
     <Button
         android:id="@+id/start_button"
+        style="@style/MenuButtonStyle"
         android:layout_width="219dp"
         android:layout_height="70dp"
         android:layout_marginStart="160dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="160dp"
-        android:backgroundTint="#B3E5FC"
-        android:backgroundTintMode="add"
-        android:fontFamily="monospace"
         android:text="Start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#000000"
-        app:strokeWidth="1px" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/exit_button"
+        style="@style/MenuButtonStyle"
         android:layout_width="219dp"
         android:layout_height="70dp"
         android:layout_marginStart="160dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="160dp"
-        android:backgroundTint="#B3E5FC"
-        android:backgroundTintMode="add"
-        android:fontFamily="monospace"
         android:text="Exit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/settings_button"
-        app:strokeColor="#000000"
-        app:strokeWidth="1px" />
+        app:layout_constraintTop_toTopOf="@+id/settings_button" />
 
     <Button
         android:id="@+id/settings_button"
+        style="@style/MenuButtonStyle"
         android:layout_width="219dp"
         android:layout_height="70dp"
         android:layout_marginStart="160dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="160dp"
-        android:backgroundTint="#B3E5FC"
-        android:backgroundTintMode="add"
-        android:fontFamily="monospace"
         android:text="Settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/start_button"
-        app:strokeColor="#000000"
-        app:strokeWidth="1px" />
+        app:layout_constraintTop_toTopOf="@+id/start_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

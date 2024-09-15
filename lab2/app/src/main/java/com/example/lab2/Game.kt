@@ -42,6 +42,14 @@ class Game : AppCompatActivity() {
         resetButton.setOnClickListener() {
             // reset
         }
+
+        val textNumber: TextView = findViewById(R.id.textView)
+
+        val sharedPreferences = getSharedPreferences("GameSettings", MODE_PRIVATE)
+        val savedNumber = sharedPreferences.getInt("savedNumber", 0)
+
+        textNumber.text = savedNumber.toString()
+
     }
 
 

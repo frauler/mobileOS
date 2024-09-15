@@ -28,16 +28,10 @@ class MainActivity : AppCompatActivity() {
         window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
 
         val startButton: Button = findViewById(R.id.start_button)
-        val settingsButton: Button = findViewById(R.id.settings_button)
         val exitButton: Button = findViewById(R.id.exit_button)
 
         startButton.setOnClickListener() {
             val intent = Intent(this, Game::class.java)
-            startActivity(intent)
-        }
-
-        settingsButton.setOnClickListener() {
-            val intent = Intent(this, Settings::class.java)
             startActivity(intent)
         }
 

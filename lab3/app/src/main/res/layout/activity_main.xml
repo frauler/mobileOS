@@ -22,24 +22,26 @@
 
     <Spinner
         android:id="@+id/converted_valute_spinner"
-        android:layout_width="115dp"
+        android:layout_width="125dp"
         android:layout_height="50dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="60dp"
         android:entries="@array/valuteList"
+        android:textAlignment="viewEnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/current_valute_spinner"
-        android:layout_width="115dp"
+        android:layout_width="125dp"
         android:layout_height="50dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="45dp"
         android:entries="@array/valuteList"
+        android:textAlignment="viewEnd"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

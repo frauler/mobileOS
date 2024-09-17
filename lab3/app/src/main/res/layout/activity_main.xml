@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:background="@drawable/transfer"
+        android:src="@drawable/transfer"
+        app:layout_constraintBottom_toBottomOf="@+id/current_valute_enter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <Spinner
+        android:id="@+id/converted_valute_spinner"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="60dp"
+        android:entries="@array/valuteList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/current_valute_spinner"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="45dp"
+        android:entries="@array/valuteList"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:text="Valute Converter"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/heading_valute_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Current"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/current_valute_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/current_valute_spinner"
+        app:layout_constraintStart_toStartOf="@+id/current_valute_spinner" />
+
+    <TextView
+        android:id="@+id/heading_valute_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Converted"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/converted_valute_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/converted_valute_spinner"
+        app:layout_constraintStart_toStartOf="@+id/converted_valute_spinner" />
+
+    <EditText
+        android:id="@+id/current_valute_enter"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:hint="@string/valute_value"
+        android:inputType="number"
+        android:textColorHint="#DCD7D7"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_valute_spinner" />
+
+    <EditText
+        android:id="@+id/converted_valute_enter"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints=""
+        android:clickable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:hint="@string/valute_value_none"
+        android:inputType="none"
+        android:textColorHint="#DCD7D7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/converted_valute_spinner" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

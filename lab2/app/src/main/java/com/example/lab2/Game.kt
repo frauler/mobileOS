@@ -73,8 +73,8 @@ class Game : AppCompatActivity() {
         }
 
         homeButton.setOnClickListener() {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
+            exitProcess(0)
         }
 
         settingsGameButton.setOnClickListener() {

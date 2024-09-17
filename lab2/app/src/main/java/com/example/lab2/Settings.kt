@@ -43,12 +43,14 @@ class Settings : AppCompatActivity() {
                 val intent = Intent(this, Game::class.java)
                 startActivity(intent)
                 resetScore()
+                this.finish()
             }
         }
 
         backButton.setOnClickListener() {
             val intent = Intent(this, Game::class.java)
             startActivity(intent)
+            this.finish()
         }
 
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)

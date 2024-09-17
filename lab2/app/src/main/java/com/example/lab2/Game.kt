@@ -2,16 +2,13 @@ package com.example.lab2
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.annotation.BinderThread
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -32,7 +29,7 @@ class Game : AppCompatActivity() {
 
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)
         window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
-        val homeButton: Button = findViewById(R.id.home_button)
+        val homeButton: Button = findViewById(R.id.close_button)
         val settingsGameButton: Button = findViewById(R.id.settings_game_button)
         val resetButton: Button = findViewById(R.id.reset_button)
         val rockButton: Button = findViewById(R.id.rock_button)
@@ -73,13 +70,14 @@ class Game : AppCompatActivity() {
         }
 
         homeButton.setOnClickListener() {
-            finish()
+            this.finish()
             exitProcess(0)
         }
 
         settingsGameButton.setOnClickListener() {
             val intent = Intent(this, Settings::class.java)
             startActivity(intent)
+            this.finish()
         }
 
         resetButton.setOnClickListener() {

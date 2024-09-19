@@ -5,9 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.list.ListFragment">
 
-    <TextView
+    <ListView
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:clipToPadding="false"
+        android:isScrollContainer="true"
+        android:verticalScrollbarPosition="right" />
 
 </FrameLayout>

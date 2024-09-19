@@ -1,5 +1,4 @@
 package com.example.lab4
-
 import android.content.Intent
 import android.media.MediaScannerConnection
 import android.net.Uri
@@ -18,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,8 +46,19 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.navigation_camera -> {
                     takePhoto()
+                    false
+                }
+
+                R.id.navigation_list -> {
+                    navController.navigate(R.id.navigation_list)
                     true
                 }
+
+                R.id.navigation_search -> {
+                    navController.navigate(R.id.navigation_search)
+                    true
+                }
+
                 else -> false
             }
         }
@@ -94,12 +105,19 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
             val file = File(photoURI.path)
+            val edit = SharedPrefsControl(this)
+            // save data to sharedPreferences
+            edit.saveMetaData(file.name, file.name, "", "")
             MediaScannerConnection.scanFile(this, arrayOf(file.toString()), null) { path, uri ->
                 runOnUiThread {
                     Toast.makeText(this, "Photo saved and added to gallery!", Toast.LENGTH_SHORT).show()
                 }
             }
+        } else if (resultCode != RESULT_OK) {
+            this.getContentResolver().delete(photoURI, null, null);
         }
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        navController.navigate(R.id.navigation_list)
     }
 
 }
